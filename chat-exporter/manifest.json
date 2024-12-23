@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Chat Conversation Exporter",
+  "description": "Export ChatGPT and Claude conversations to various formats",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "downloads",
+    "storage",
+    "tabs"
+  ],
+  "content_scripts": [{
+    "matches": [
+      "https://chat.openai.com/*",
+      "https://claude.ai/*"
+    ],
+    "js": ["scripts/content.js"],
+    "run_at": "document_idle"
+  }],
+  "action": {
+    "default_popup": "popup/popup.html"
+  }
+} 
